@@ -1,4 +1,4 @@
-//PANOZZO ELISA SILENE -- 2009689
+//PANOZZO ELISA SILENE
 
 #include "Alfiere.h"
 #include <iostream>
