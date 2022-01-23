@@ -1,3 +1,5 @@
+// COCIANCICH FABIO - 2016268
+
 #ifndef CHESSBOARD_H
 #define CHESSBOARD_H
 
@@ -7,7 +9,6 @@
 #include <vector>
 #include <map>
 
-
 #include "Pezzo.h"
 
 #include "Pedone.h"
@@ -16,8 +17,6 @@
 #include "Cavallo.h"
 #include "Alfiere.h"
 #include "Torre.h"
-
-
 
 #include "Player.h"
 #include "Mossa.h"
@@ -75,14 +74,22 @@ class ChessBoard {
 
 private:
 	//scacchiera dove metteremo i pezzi segnati da lettere
-	// utile per la stampa
 	//          [ riga ]  [ colonna ]
 	//char scacchiera_char[8][8];
+
+	//costante di grandezza della scacchiera
+	static const int grandezza = 8;
+
+	//costante, massimo mosse 
+	static const int maxMosse = 100;
+
+	//limite massimo di mosse per una partita tra due pc
+	static const int maxMossePc = 800;
 
 
 	//scacchiera con i puntatori a superclasse
 	//scacchiera[riga][colonna]
-	Pezzo* scacchiera[8][8];
+	Pezzo* scacchiera[grandezza][grandezza];
 
 
 	//0 per partita giocatore - pc
@@ -102,7 +109,7 @@ private:
 	bool turno;
 
 	//stato della partita
-	enum stato { Attiva = 0, ScaccoMatto = 1, Stallo = 2, Patta = 3 };
+	enum class stato { Attiva = 0, ScaccoMatto = 1, Stallo = 2, Patta = 3 };
 	stato statoPartita;
 
 
@@ -112,8 +119,6 @@ private:
 
 
 
-	//limite massimo di mosse per una partita tra due pc
-	const int maxMossePc = 800;
 
 
 	//mappa per tenere memoria delle varie posizioni dei
@@ -210,6 +215,11 @@ private:
 
 	//metodo per contare quanti pezzi ci sono nella scacchiera
 	int contaPezzi();
+
+
+	//metodo che mescola un vettore, serve per far fare delle mosse
+	//non prevedibili al computer
+	void mescolaVettore(std::vector<Casella>& v);
 
 
 
