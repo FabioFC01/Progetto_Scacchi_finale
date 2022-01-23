@@ -1,3 +1,5 @@
+// COCIANCICH FABIO - 2016268
+
 #ifndef PEZZO_H
 #define PEZZO_H
 
@@ -30,11 +32,7 @@ class Pezzo {
 	2
 	1
 	    A B C D E F G H
-	
-	
-	
-	
-	
+
 	*/
 
 private:
@@ -105,12 +103,6 @@ public:
 	// immaginando che il pezzo si muova in una scacchiera vuota
 	 virtual bool move(const Casella inizio, const Casella arrivo, const bool cattura) = 0;
 	
-
-
-
-
-
-	 
 
 
 };
