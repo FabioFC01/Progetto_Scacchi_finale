@@ -137,7 +137,7 @@ Mossa ChessBoard::input() {
 	do {
 		//chiedi input
 		std::cout << "Inserisci input :   ";
-		getline(cin, in);   //B1 C2
+		getline(cin, in);   
 
 		//controlla che ci sia una richiesta di stampare
 		//a video la scacchiera
